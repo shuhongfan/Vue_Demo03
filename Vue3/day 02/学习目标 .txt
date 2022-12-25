@@ -1,0 +1,6 @@
+能够说出什么是前端工程化
+能够说出 webpack 的作用
+能够掌握 webpack 的基本使用
+了解常用 plugin 的基本使用
+了解常用 loader 的基本使用
+能够说出 Source Map 的作用

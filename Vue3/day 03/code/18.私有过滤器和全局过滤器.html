@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p :title="info | capitalize">{{message | capitalize}}</p>
+    </div>
+
+    <div id="app2">
+      <p>{{abc | capitalize}}</p>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+      // 全局过滤器
+      Vue.filter('capitalize', (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1) + '~~~'
+      })
+    </script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello vue.js',
+          info: 'title info',
+        },
+        // 私有过滤器，只能被当前 vm 所控制的区域所使用
+        filters: {
+          capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1)
+          },
+        },
+      })
+    </script>
+
+    <script>
+      const vm2 = new Vue({
+        el: '#app2',
+        data: {
+          abc: 'abc'
+        }
+      })
+    </script>
+  </body>
+</html>

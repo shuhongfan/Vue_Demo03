@@ -1,0 +1,5 @@
+能够知道如何使用 vue-cli 创建 vue 项目
+能够知道如何在项目中安装与配置 element-ui
+能够知道 element-ui 中常见组件的用法
+能够知道如何使用 axios 中的拦截器
+能够知道如何配置 proxy 接口代理

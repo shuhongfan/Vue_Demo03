@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+      <h3>count 的值为：{{count}}</h3>
+      <!-- TODO：点击按钮，让 data 中的 count 值自增 +1 -->
+      <button v-on:click="addCount">+1</button>
+    </div>
+
+    <!-- 导入 vue 脚本文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+      // 创建 VM 实例对象
+      const vm = new Vue({
+        // 指定当前 VM 要控制的区域
+        el: '#app',
+        // 数据源
+        data: {
+          // 计数器的值
+          count: 0,
+        },
+        methods: {
+          // 点击按钮，让 count 自增 +1
+          addCount() {
+            this.count += 1
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

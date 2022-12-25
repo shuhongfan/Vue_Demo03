@@ -1,0 +1,11 @@
+:root {
+  font-size: 12px;
+}
+
+body {
+  padding: 8px;
+}
+
+input.form-control {
+  width: 220px !important;
+}

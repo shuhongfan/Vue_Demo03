@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 2. 声明要被 vue 所控制的 DOM 区域 -->
+    <div id="app">{{age}}</div>
+
+    <!-- 1. 导入 vue 的脚本文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <!-- 3. 创建 vue 的实例对象 -->
+    <script>
+      const vm = new Vue({
+        // 3.1 使用 el 属性，指定 vue 要控制的区域
+        el: '#app',
+        // 3.2 数据源
+        data: {
+          username: 'zs',
+          age: 20
+        },
+      })
+    </script>
+  </body>
+</html>

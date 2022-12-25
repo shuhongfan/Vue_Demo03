@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .inner {
+      line-height: 100px;
+      background-color: aliceblue;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .outer {
+      background-color: bisque;
+      padding: 50px;
+      font-size: 13px;
+    }
+
+    .box {
+      background-color: coral;
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 在页面中声明一个将要被 vue 所控制的 DOM 区域 -->
+  <div id="app">
+    <h4>① .prevent 事件修饰符的应用场景</h4>
+    <a href="https://www.baidu.com" @click="onLinkClick">百度首页</a>
+
+    <hr />
+
+    <h4>② .stop 事件修饰符的应用场景</h4>
+    <div class="outer" @click="onOuterClick">
+      外层的 div
+      <div class="inner" @click="onInnerClick">内部的 div</div>
+    </div>
+
+    <hr />
+
+    <h4>③ .capture 事件修饰符的应用场景</h4>
+    <div class="outer" @click="onOuterClick">
+      外层的 div
+      <div class="inner" @click="onInnerClick">内部的 div</div>
+    </div>
+
+    <hr />
+
+    <h4>④ .once 事件修饰符的应用场景</h4>
+    <div class="inner" @click="onInnerClick">内部的 div</div>
+
+    <hr />
+
+    <h4>⑤ .self 事件修饰符的应用场景</h4>
+    <div class="box" @click="onBoxClick">
+      最外层的 box
+      <div class="outer" @click="onOuterClick">
+        中间的 div
+        <div class="inner" @click="onInnerClick">内部的 div</div>
+      </div>
+    </div>
+
+    <hr />
+  </div>
+
+  <script src="./lib/vue-2.6.12.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      // 声明处理函数的节点
+      methods: {
+        // 超链接的点击事件处理函数
+        onLinkClick() {
+          alert('ok')
+        },
+        // 点击了外层的 div
+        onOuterClick() {
+          console.log('触发了 outer 的 click 事件处理函数')
+        },
+        // 点击了内部的 div
+        onInnerClick() {
+          console.log('触发了 inner 的 click 事件处理函数')
+        },
+        onBoxClick() {
+          console.log('触发了 box 的 click 事件处理函数')
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

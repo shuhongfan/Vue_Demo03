@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p :title="info | capitalize">{{message | capitalize | maxLength}}</p>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+      // 全局过滤器
+      // 首字母转大写的过滤器
+      Vue.filter('capitalize', (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1)
+      })
+
+      // 定义控制文本长度的过滤器
+      Vue.filter('maxLength', (str) => {
+        if(str.length <= 10) return str
+        return str.slice(0, 10) + '...'
+      })
+    </script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello vue.js',
+          info: 'title info',
+        },
+      })
+    </script>
+  </body>
+</html>

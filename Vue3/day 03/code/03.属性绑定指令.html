@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+      <input type="text" :placeholder="inputValue">
+      <hr>
+      <img :src="imgSrc" alt="">
+    </div>
+
+    <!-- 导入 vue 脚本文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+      // 创建 VM 实例对象
+      const vm = new Vue({
+        // 指定当前 VM 要控制的区域
+        el: '#app',
+        // 数据源
+        data: {
+          // 文本框的占位符内容
+          inputValue: '请输入内容',
+          // 图片的 src 地址
+          imgSrc: './images/logo.png',
+        },
+      })
+    </script>
+  </body>
+</html>

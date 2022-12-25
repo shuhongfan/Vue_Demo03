@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="num > 0.5">随机数 ＞ 0.5</p>
+      <p v-else>随机数 ≤ 0.5</p>
+
+      <hr />
+
+      <p v-if="type === 'A'">优秀</p>
+      <p v-else-if="type === 'B'">良好</p>
+      <p v-else-if="type === 'C'">一般</p>
+      <p v-else>差</p>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          // 生成 1 以内的随机数
+          num: Math.random(),
+          // 类型
+          type: 'A'
+        },
+      })
+    </script>
+  </body>
+</html>

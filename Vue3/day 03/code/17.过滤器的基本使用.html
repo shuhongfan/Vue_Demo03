@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p :title="info | capitalize">{{message | capitalize}}</p>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello vue.js',
+          info: 'title info',
+        },
+        filters: {
+          capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

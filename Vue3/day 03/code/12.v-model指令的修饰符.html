@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      姓名：<input type="text" v-model.trim="username" />
+
+      <hr />
+
+      年龄：<input type="text" v-model.number="age" />
+
+      <hr />
+
+      地址：<input type="text" v-model.lazy="address" />
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          // 姓名
+          username: 'zs',
+          // 年龄
+          age: 1,
+          // 地址
+          address: '北京市',
+        },
+      })
+    </script>
+  </body>
+</html>

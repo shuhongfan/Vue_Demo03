@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="(user, i) in list">索引是：{{i}}，姓名是：{{user.name}}</li>
+      </ul>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          // 用户列表的数据
+          list: [
+            { id: 1, name: 'zs' },
+            { id: 2, name: 'ls' },
+          ],
+        },
+      })
+    </script>
+  </body>
+</html>
